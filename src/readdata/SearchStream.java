@@ -21,16 +21,33 @@ public class SearchStream {
                             "   eq_site            :" + data[4] + "\n" +
                             "   point granularity  :" + data[17] + "\n" +
                             "   construction       :" + data[16];
-                }else {
-                    return "id not found";
                 }
             }
-        }else{
+        } else {
             return "enter valid 6 digit id";
         }
         return "";
     }
-    public String searchbyContruction(String constructionType){
-        
+
+    public String searchbyContruction(String constructionType) throws IOException {
+        String line = "";
+        int count = 0;
+        int sumGranularity = 0;
+        while ((line = myreader.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data[16].equals(constructionType)) {
+                count++;
+                sumGranularity = sumGranularity + Integer.parseInt(data[17]);
+
+            }
+        }
+        if (count == 0) {
+            System.out.println("no policy found or invalid construction type");
+        } else {
+            return "details \n" +
+                    "    number of entries   " + count + "\n" +
+                    "   sum of granularity  " + sumGranularity;
+        }
+        return "";
     }
 }

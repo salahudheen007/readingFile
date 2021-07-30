@@ -18,7 +18,8 @@ public class MainTest {
         else if(option.equals("b")){
             System.out.println("enter construction type");
             String constructionType=sc.nextLine();
-            String data=mysearch.
+            String data=mysearch.searchbyContruction(constructionType);
+            System.out.println(data);
 
         }else{
             System.out.println("enter correct option");
