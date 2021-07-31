@@ -3,7 +3,7 @@ package nonstream;
 public class Policy {
     private int id, pointGranularity;
     private double eqSite, huSite;
-    private String stateCode, constructioType;
+    private String stateCode, constructionType;
 
     public Policy(String dataLine) {
         String[] datas = dataLine.split(",");
@@ -12,7 +12,7 @@ public class Policy {
         eqSite = Double.parseDouble(datas[3]);
         huSite = Double.parseDouble(datas[4]);
         stateCode = datas[1];
-        constructioType = datas[16];
+        constructionType = datas[16];
 
     }
 
@@ -24,8 +24,8 @@ public class Policy {
         return pointGranularity;
     }
 
-    public String getConstructioType() {
-        return constructioType;
+    public String getConstructionType() {
+        return constructionType;
     }
 
     @Override
@@ -36,6 +36,6 @@ public class Policy {
                 "\n   eqSite=" + eqSite +
                 "\n   huSite=" + huSite +
                 "\n   stateCode='" + stateCode  +
-                "\n   constructioType='" + constructioType;
+                "\n   constructioType='" + constructionType;
     }
 }
