@@ -18,7 +18,7 @@ public class SearchStream {
                     return "data:" + id + "\n" +
                             "   statecode          :" + data[1] + "\n" +
                             "   eq site            :" + data[3] + "\n" +
-                            "   eq_site            :" + data[4] + "\n" +
+                            "   hu site            :" + data[4] + "\n" +
                             "   point granularity  :" + data[17] + "\n" +
                             "   construction       :" + data[16];
                 }
