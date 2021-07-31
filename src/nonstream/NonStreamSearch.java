@@ -11,7 +11,7 @@ public class NonStreamSearch {
     public static void main(String[] args) throws IOException {
         File myfile = new File("C:\\Users\\salah\\IdeaProjects\\reading_file\\data.csv");
         BufferedReader br = new BufferedReader(new FileReader(myfile));
-        ArrayList policies = new ArrayList();
+        ArrayList<Policy> policies = new ArrayList();
         String data = br.readLine();
         while ((data = br.readLine()) != null) {
             Policy policy = new Policy(data);
@@ -26,7 +26,7 @@ public class NonStreamSearch {
             int id = sc.nextInt();
             if (id >= 100000 && id <= 999999) {
                 for (int i = 0; i < policies.size(); i++) {
-                    Policy mypolicy = (Policy) policies.get(i);
+                    Policy mypolicy =  policies.get(i);
                     if (id == mypolicy.getId()) {
                         System.out.println(mypolicy);
                         return;

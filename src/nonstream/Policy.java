@@ -35,7 +35,7 @@ public class Policy {
                 "\n   pointGranularity=" + pointGranularity +
                 "\n   eqSite=" + eqSite +
                 "\n   huSite=" + huSite +
-                "\n   stateCode='" + stateCode  +
+                "\n   stateCode='" + stateCode +
                 "\n   constructioType='" + constructionType;
     }
 }
