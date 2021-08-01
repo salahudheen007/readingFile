@@ -5,17 +5,26 @@ public class Maintest {
 
 
         Device myLaptop = new Laptop("Lenovo", "5343654", 8, "windows");
-        System.out.println(myLaptop.turnOn());
-        System.out.println(myLaptop.turnOff());
 
         Device myphone = new Mobile("mi s2", 64, "android");
-        System.out.println(myphone.turnOn());
-        System.out.println(myphone.turnOff());
 
-        Maintest main = new Maintest();
-        System.out.println(main.myDevice(myphone));
-        System.out.println(main.myDevice(myLaptop));
+        DeviceFinder finder=new DeviceFinder();
+        finder.restart(new Device() {
+            @Override
+            public String turnOn() {
+                return "On";
+            }
 
+            @Override
+            public String turnOff() {
+                return "off";
+            }
+
+            @Override
+            public String findMyDevice() {
+                return null;
+            }
+        });
     }
 
     public String myDevice(Device device) {
